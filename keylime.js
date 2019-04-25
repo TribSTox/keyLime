@@ -645,7 +645,7 @@ function isInput (el) {
     var // Regex to match inputs needing the IME
         allowed = /^(?:text|email|number|password|tel|url|search)$/;
 
-    return (allowed.test(el.type) || el.isContentEditable) && !el.readOnly;
+    return (allowed.test(el.type) || el.isContentEditable || el.tagName === 'TEXTAREA') && !el.readOnly;
 }
 
 /**
